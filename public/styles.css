@@ -113,19 +113,24 @@ h3 {
   margin: 0 auto;
 }
 .section {
-  padding: 3rem;
+  padding: 3rem 1rem;
   text-align: center;
-  min-height: 90vh;
+  min-height: 87vh;
   margin-bottom: 2rem;
 }
+@media screen and (min-width: 375px) {
+  .section {
+    padding: 3rem;
+  }
+}
 .section__title {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   text-align: center;
   margin-bottom: 4px;
 }
 @media screen and (min-width: 768px) {
   .section__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -134,8 +139,8 @@ h3 {
 }
 .section__subtitle {
   display: block;
-  font-size: 14px;
-  margin-bottom: 2.8rem;
+  font-size: 12px;
+  margin-bottom: 2rem;
   color: var(--description);
 }
 
@@ -163,7 +168,7 @@ header {
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: 0.9rem 2rem;
+  padding: 0.3rem 2rem;
   z-index: var(--z-fixed);
   background-color: var(--card-background);
   box-shadow: 0px 4px 10px rgb(143, 143, 143);
@@ -182,12 +187,11 @@ header {
   align-items: center;
 }
 .nav__logo,
-.nav__toggle,
-.nav__dark-mode {
+.nav__toggle {
   color: var(--turquiose);
   font-weight: var(--font-w-medium);
   transition: all 0.4s ease;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
 }
 .nav__logo:hover,
@@ -202,7 +206,7 @@ header {
     bottom: -100%;
     width: 100%;
     background: var(--light);
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 0.5rem;
     box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
     transition: all 0.3s ease;
@@ -212,13 +216,17 @@ header {
   bottom: 0 !important;
 }
 .nav__list {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+}
+@media screen and (min-width: 365px) {
+  .nav__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .nav__btns {
   display: flex;
-  padding: 10px;
-  width: 97px;
+  padding: 0px;
   justify-content: flex-end;
   align-items: center;
 }
@@ -275,7 +283,7 @@ header {
   position: relative;
   overflow: hidden;
   display: flex;
-  min-width: 158px;
+  min-width: 116px;
   max-width: max-content;
 }
 .button--flex div {
@@ -284,15 +292,7 @@ header {
   position: relative;
   z-index: 2;
   padding: 0.5rem 1rem;
-  font-size: 15px;
-}
-@media screen and (min-width: 768px) {
-  .button--flex div {
-    font-size: 14px;
-  }
-}
-.button--flex div:hover {
-  color: #fff;
+  font-size: 14px;
 }
 
 .button--flex:after {
@@ -305,27 +305,38 @@ header {
   left: 0px;
   transition: all 0.3s ease;
 }
-.button--flex:hover:after {
-  width: 100%;
+
+@media screen and (min-width: 768px) {
+  .button--flex div {
+    font-size: 14px;
+  }
+  .button--flex div:hover {
+    color: #fff;
+  }
+  .button--flex:hover:after {
+    width: 100%;
+  }
 }
 
 .button__icon {
   margin-left: 8px;
-  font-size: 19px;
+  font-size: 14px;
 }
 /*Home*/
 .home {
   padding: 3rem;
-  height: 95vh;
+  height: 96vh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .home__container {
   height: auto;
 }
 div.home__button {
-  padding: 5px 25px;
-  font-size: 16px;
+  padding: 2px 8px;
+  font-size: 11px;
 }
 @media screen and (min-width: 768px) {
   div.home__button {
@@ -335,19 +346,27 @@ div.home__button {
 }
 
 .home__title {
-  font-size: 3.4rem;
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
   color: var(--white);
 }
 
 .home__subtitle {
-  font-size: 1.2rem;
+  font-size: 0.85rem;
   margin-bottom: 1.2rem;
+}
+@media screen and (min-width: 365px) {
+  .home__title {
+    font-size: 2.5rem;
+  }
+  .home__subtitle {
+    font-size: 17px;
+  }
 }
 .home__description {
   color: var(--description);
   margin-bottom: 0.4rem;
-  font-size: 16px;
+  font-size: 12px;
   margin: 36px 0;
 }
 .home__data .button {
@@ -358,8 +377,11 @@ div.home__button {
   align-items: center;
 }
 @media screen and (min-width: 728px) {
+  .home__title {
+    font-size: 3.5rem;
+  }
   .home__subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .home__description {
     font-size: 14px;
@@ -375,14 +397,14 @@ div.home__button {
 .home__social {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0 2.3rem;
-  margin-top: 62px;
+  gap: 0 0.4rem;
+  margin-top: 16px;
   grid-column: 1/3;
 }
 
 .home__social-icon {
   color: var(--white);
-  font-size: 1.7rem;
+  font-size: 1.33rem;
   text-align: center;
   position: relative;
 }
@@ -418,6 +440,7 @@ div.home__button {
     justify-content: center;
     width: 135px;
     margin-top: 8px;
+    gap: 0 2rem;
   }
 
   .home__data {
@@ -425,18 +448,11 @@ div.home__button {
     grid-row: 4;
   }
   .home__social-icon {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     padding: 0 11px 10px 11px;
   }
 }
-@media screen and (min-width: 900px) {
-  .home__blob {
-    width: 370px;
-  }
-  .home__img {
-    left: 0;
-  }
-}
+
 @media screen and (min-width: 1200px) {
   .home__social {
     grid-row: 6/8;
@@ -471,17 +487,19 @@ div.home__button {
   margin-top: 60px;
 }
 .about__container img {
-  max-width: 100%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
 .about__description {
   color: var(--description);
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: 1.3rem;
   margin-top: 20px;
   text-align: center;
   line-height: 35px;
   word-spacing: 2px;
+  font-size: 13px;
+  padding: 0 10px;
 }
 .about__info {
   display: flex;
@@ -490,23 +508,24 @@ div.home__button {
 
 .about__info-title {
   color: var(--turquiose);
-  font-size: 2.35rem;
+  font-size: 1.7rem;
   font-weight: var(--font-w-semi-bold);
 }
 .about__info-name {
   color: var(--description);
+  font-size: 11px;
 }
 div.about__button__content {
-  padding: 0.3rem 1.5rem;
-  font-size: 14px;
+  padding: 0.25rem 1rem;
+  font-size: 12px;
 }
 @media screen and (min-width: 800px) {
   .about__container {
-    width: 77%;
+    width: 80%;
     display: grid;
-    margin-top: 3.4rem;
+    margin-top: 1.6rem;
     grid-template-columns: repeat(16, 1fr);
-    gap: 2.3rem;
+    gap: 1rem 0.7rem;
   }
   .about__data {
     grid-column: 9/16;
@@ -520,12 +539,11 @@ div.about__button__content {
   .about__button {
     grid-column: 4/14;
     grid-row: 2 / 3;
-    margin-top: 5.7rem;
+    margin-top: 6.9rem;
   }
 
   .about__description {
     margin: 0;
-    margin-bottom: 0.75rem;
     grid-row: 1/3;
     font-size: 12px;
     padding: 0 1rem;
@@ -535,12 +553,15 @@ div.about__button__content {
   .about__info {
     text-align: center;
     padding: 0 16px;
+    height: 100px;
+    align-items: center;
     grid-row: 2 / 3;
     grid-column: 3/15;
+    margin-top: 0.8rem;
   }
 
   .about__info-title {
-    font-size: 2em;
+    font-size: 1.9em;
     padding: 0 2rem;
   }
   .about__info-name {
@@ -562,23 +583,30 @@ div.about__button__content {
   justify-content: space-between;
 }
 .skills__title {
-  font-size: 1.18rem;
+  font-size: 0.95rem;
 }
 
 .tech-icon {
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin-left: 10px;
   color: var(--cornflower);
   font-weight: var(--font-w-semi-bold);
   background: #fff;
-  padding: 5px 10px;
+  padding: 3px 7px;
   border-radius: 50%;
 }
 .skills__container {
-  margin-top: 3.3rem;
-  height: 450px;
-  max-width: 700px;
+  margin-top: 2.2rem;
+  height: 390px;
+  min-width: 200px;
+  width: 95%;
   transition: all 0.3s ease;
+}
+@media screen and (min-width: 375px) {
+  .skills__container {
+    width: auto;
+    max-width: 700px;
+  }
 }
 .skill__static {
   overflow: hidden;
@@ -588,11 +616,12 @@ div.about__button__content {
 }
 .skills__description {
   color: var(--description);
-  width: 200px;
-  font-size: 13px;
+  width: 175px;
+  display: block;
+  font-size: 12px;
 }
 .skills__icon {
-  width: 36px;
+  width: 32px;
 }
 .skills__icon img {
   width: 100%;
@@ -621,7 +650,7 @@ div.about__button__content {
 }
 
 .services__container {
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 .service__card {
   display: flex;
@@ -631,9 +660,9 @@ div.about__button__content {
   align-items: center;
   border-radius: 27px;
   margin-bottom: 5rem;
-  box-shadow: 6px 7px 10px 10px rgba(2, 2, 2, 0.4);
-  background: #6064b4;
-  padding: 1.6rem 0.8rem;
+  box-shadow: 6px 7px 0px 0px rgba(110, 110, 110, 0.4);
+  background: #06033c;
+  padding: 2rem 0.8rem;
   grid-row: 1/2;
   width: 100%;
 }
@@ -686,22 +715,22 @@ div.about__button__content {
   margin-top: 1rem;
 }
 .card__content h3 {
-  max-width: 75%;
+  max-width: 85%;
   font-size: 1.25rem;
-  color: rgb(14, 14, 14);
+  color: rgb(207, 204, 204);
   position: relative;
-  padding: 23px 28px;
+  padding: 23px 20px;
   margin: 0 auto;
   overflow: hidden;
   transition: all 0.3s ease;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 .card__content h3::before {
   content: "";
   display: block;
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   top: 0;
   left: 0;
   animation: rightMove 1s;
@@ -715,22 +744,22 @@ div.about__button__content {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-right: 4px solid var(--turquiose);
   border-bottom: 4px solid var(--turquiose);
 }
 
 .card__content p {
-  color: rgb(34, 34, 34);
+  color: rgb(201, 199, 199);
   margin-top: 18px;
-  font-size: 14px;
-  padding: 0 2rem;
+  font-size: 13px;
+  padding: 0 1rem;
 }
 
 .project__card {
   margin-bottom: 2.7rem;
-  max-width: 96%;
+  max-width: 98%;
 }
 .project__card:last-child {
   margin-bottom: 0;
@@ -746,19 +775,19 @@ div.about__button__content {
 
 .project__content {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2.9rem 0;
   border-radius: 0 0;
   width: 100%;
 }
 .project__content h3 {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 .project__content p {
   color: var(--description);
   margin-top: 20px;
   line-height: 33px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .project__header {
@@ -780,7 +809,7 @@ div.about__button__content {
 }
 @media screen and (min-width: 768px) {
   .project__card {
-    width: 100%;
+    width: 88%;
   }
   .projects__container {
     flex-direction: row;
@@ -813,17 +842,17 @@ div.about__button__content {
   }
 }
 .project1 {
-  background-image: url(./assets/img/project1.jpg);
+  background-image: url(./assets/img/project1.png);
   background-position: center center;
   background-size: cover;
 }
 .project2 {
-  background-image: url(./assets/img/project2.jpg);
+  background-image: url(./assets/img/project2.png);
   background-position: center center;
   background-size: cover;
 }
 .project3 {
-  background-image: url(./assets/img/project3.jpg);
+  background-image: url(./assets/img/project3.png);
   background-position: center center;
   background-size: cover;
 }
@@ -837,10 +866,10 @@ div.about__button__content {
 }
 .testimonial__header img {
   border-radius: 15px;
-  height: 320px;
+  height: 310px;
   box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.4);
   margin-bottom: 17px;
-  width: 255px;
+  width: 240px;
 }
 .testimonial__header h3 {
   font-size: 1.36rem;
@@ -851,15 +880,16 @@ div.about__button__content {
   color: #fff;
 }
 .testimonial__client {
-  font-size: 15px;
+  font-size: 12px;
   color: var(--description);
 }
 .testimonial__description {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--description);
+  padding: 0 1.6rem;
 }
 .testimonial__content {
-  margin: 3.4rem 0;
+  margin: 0 0 3.4rem 0;
 }
 .testimonial__content:last-child {
   margin-bottom: 0;
@@ -870,13 +900,17 @@ div.about__button__content {
     display: flex;
     margin: 0 auto;
     flex-wrap: wrap;
-    margin-top: 5rem;
+    margin-top: 0rem;
     justify-content: center;
     max-width: 1200px;
   }
   .testimonial__content {
-    flex-basis: calc(35% - 2rem);
-    margin: 1.8rem 1.8rem 3rem 1.8rem;
+    flex-basis: calc(50%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .testimonial__content {
+    flex-basis: calc(30%);
   }
 }
 
@@ -964,6 +998,7 @@ div.about__button__content {
 .nav__footer {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 2rem;
@@ -971,6 +1006,7 @@ div.about__button__content {
 @media screen and (min-width: 768px) {
   .nav__footer {
     flex-direction: row;
+    width: auto;
   }
 }
 
@@ -981,13 +1017,14 @@ div.about__button__content {
 }
 .nav__footer a {
   color: #fff;
-  padding: 10px;
   text-decoration: none;
+  display: block;
+  line-height: 56px;
   margin-right: 0px;
-  font-size: 18px;
-  margin-bottom: 32px;
+  font-size: 15px;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .nav__footer a::after {
@@ -1005,16 +1042,17 @@ div.about__button__content {
 }
 
 .footer span {
-  font-size: 15px;
+  font-size: 13px;
   display: block;
-  padding: 3rem 2rem 6rem 2rem;
+  padding: 2.3rem 2rem 6rem 2rem;
   background: #070927;
 }
 
 @media screen and (min-width: 768px) {
   .nav__footer a {
     margin-bottom: 0;
-    margin-right: 7px;
+    line-height: normal;
+    padding: 0.7rem 1rem;
     font-size: 13px;
   }
   .footer span {
